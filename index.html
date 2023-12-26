@@ -8,4 +8,10 @@
 	<body>
 		Web Socket
 	</body>
+	<script>
+		const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws'
+		let ws = new WebSocket(`${protocol}://${window.location.host}`)
+
+		ws.onmessage = (event) => console.log(event.data)
+	</script>
 </html>
